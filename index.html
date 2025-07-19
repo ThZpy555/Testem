@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <title>Gerador de Keys Aleatórias</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            padding: 40px;
+            background: #f7f7f7;
+        }
+        #key {
+            font-size: 1.6em;
+            font-weight: bold;
+            margin: 20px 0;
+            background: #e0e0e0;
+            padding: 10px 20px;
+            border-radius: 8px;
+        }
+        button {
+            padding: 10px 25px;
+            font-size: 1.1em;
+            background: #007bff;
+            color: #fff;
+            border: none;
+            border-radius: 6px;
+            cursor: pointer;
+        }
+        button:hover {
+            background: #0056b3;
+        }
+    </style>
+</head>
+<body>
+    <h1>Gerador de Keys Aleatórias</h1>
+    <div id="key"></div>
+    <button onclick="gerarKey()">Gerar Key</button>
+
+    <script>
+        function gerarKey(tamanho = 20) {
+            const caracteres = 'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789';
+            let key = '';
+            for (let i = 0; i < tamanho; i++) {
+                key += caracteres.charAt(Math.floor(Math.random() * caracteres.length));
+            }
+            document.getElementById('key').textContent = key;
+        }
+    </script>
+</body>
+</html>
